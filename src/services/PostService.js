@@ -20,6 +20,7 @@ export default {
     return API.apiClient.delete(`/posts/${postId}`)
   },
   createComment (data, postId, commentId = null) {
+    console.log((''))
     let url = ''
     if (commentId) {
       url = `/posts/${postId}/comments/${commentId}`
