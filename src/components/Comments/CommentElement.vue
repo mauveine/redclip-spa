@@ -136,9 +136,6 @@ export default {
               })
           })
       }
-      if (item.id === 'update') {
-        this.editMode = true
-      }
     }
   }
 }

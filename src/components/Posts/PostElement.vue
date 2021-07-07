@@ -46,11 +46,11 @@
           </v-menu>
         </div>
         <v-list-item-title class="text-h5 mb-4">
-          <router-link :to="getRouteUrl" v-if="!editMode">
+          <router-link :to="getRouteUrl">
             {{ postData.title }}
           </router-link>
           <v-textarea v-model="postData.content" v-else
-                        name="restaurantName"
+                        name="postContent"
                         type="text" required />
         </v-list-item-title>
         <v-list-item-content style="max-width: 480px">
@@ -101,7 +101,6 @@ export default {
   },
   data () {
     return {
-      editMode: false,
       postData: Object.assign({}, this.post, {})
     }
   },
@@ -125,11 +124,6 @@ export default {
         title: 'Delete',
         handle: 'post/deletePost'
       })
-      // result.push({
-      //   id: 'update',
-      //   title: 'Update',
-      //   handle: 'post/updatePost'
-      // })
       return result
     },
     isMenuAllowed () {
@@ -163,20 +157,6 @@ export default {
               })
           })
       }
-      if (item.id === 'update') {
-        this.editMode = true
-      }
-    },
-    updateRestaurant () {
-      const $this = this
-      this.$store.dispatch('restaurant/updateRestaurant', { restaurantId: this.postData.id, name: this.postData.name })
-        .then(result => {
-          $this.editMode = false
-        })
-    },
-    cancelUpdate () {
-      this.postData.title = this.post.title
-      this.editMode = false
     }
   },
   watch: {

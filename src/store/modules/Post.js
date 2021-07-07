@@ -110,10 +110,6 @@ const post = {
       return new Promise((resolve) => {
         PostService.deletePost(postId)
           .then((response) => {
-            // const restaurants = getters.all.filter((restaurant) => {
-            //   return restaurant.id !== restaurantId
-            // })
-            // commit('SET_ALL', restaurants)
             resolve(response)
           })
           .catch((error) => {
