@@ -49,9 +49,6 @@
           <router-link :to="getRouteUrl">
             {{ postData.title }}
           </router-link>
-          <v-textarea v-model="postData.content"
-                        name="postContent"
-                        type="text" required />
         </v-list-item-title>
         <v-list-item-content style="max-width: 480px">
           <img v-if="postData.content_type === 'img'" width="280" :src="postData.content" alt="Media"/>
