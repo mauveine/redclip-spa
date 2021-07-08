@@ -49,7 +49,7 @@
           <router-link :to="getRouteUrl">
             {{ postData.title }}
           </router-link>
-          <v-textarea v-model="postData.content" v-else
+          <v-textarea v-model="postData.content"
                         name="postContent"
                         type="text" required />
         </v-list-item-title>
